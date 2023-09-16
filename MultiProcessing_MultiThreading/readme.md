@@ -49,5 +49,16 @@ def io_bound(sec):
 
 In this example, run these 2 tasks in Single Thread, Multithreaded in Single Process, and finally in Multithreaded in Multiple processes.
 
+Here we have the differences between Multithreading and multiprocessing.
+
+| Aspect  | MultiThreading | MultiProcessing |
+| ------------- | ------------- |
+| Concurrency vs. Parallelism  | Concurrent execution within a single process; limited parallelism due to the Global Interpreter Lock (GIL).  | True parallelism with multiple processes, each running independently.|
+| Global Interpreter Lock (GIL)  | Affected by the GIL, limiting true parallelism, making it less suitable for CPU-bound tasks.  | Not affected by the GIL; allows for effective parallelism in CPU-bound tasks. |
+| Memory Consumption  | More memory-efficient as threads share the same memory space.  | Higher memory consumption as each process has its own memory space. |
+| Communication Between Threads/Processes  | Threads can communicate easily through shared memory. | Requires inter-process communication (IPC) mechanisms for processes to exchange data. |
+| Complexity and Debugging  | Generally easier to implement and debug, but can introduce synchronization issues.  | May be more complex to set up and debug, but avoids some concurrency-related issues. |
+| Use Cases  | Ideal for I/O-bound tasks where threads can wait for I/O operations (e.g., networking, file operations). May not be as effective for CPU-bound tasks.  | Ideal for CPU-bound tasks that require true parallelism, such as data processing, numerical computations, and simulations. |
+
 
 References: https://www.geeksforgeeks.org/difference-between-multithreading-vs-multiprocessing-in-python/
