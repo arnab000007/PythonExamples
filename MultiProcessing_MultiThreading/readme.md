@@ -47,12 +47,12 @@ def io_bound(sec):
 	    ---> at {datetime.datetime.now()}")
 ```
 
-In this example, run these 2 tasks in Single Thread, Multithreaded in Single Process, and finally in Multithreaded in Multiple processes.
+In this example, run these 2 tasks in Single Thread, Multithreaded in Single Process, and finally in Multithreaded in Multiple Processes.
 
 Here we have the differences between Multithreading and multiprocessing.
 
 | Aspect  | MultiThreading | MultiProcessing |
-| ------------- | ------------- |
+| ------------- | ------------- | ------------- |
 | Concurrency vs. Parallelism  | Concurrent execution within a single process; limited parallelism due to the Global Interpreter Lock (GIL).  | True parallelism with multiple processes, each running independently.|
 | Global Interpreter Lock (GIL)  | Affected by the GIL, limiting true parallelism, making it less suitable for CPU-bound tasks.  | Not affected by the GIL; allows for effective parallelism in CPU-bound tasks. |
 | Memory Consumption  | More memory-efficient as threads share the same memory space.  | Higher memory consumption as each process has its own memory space. |
